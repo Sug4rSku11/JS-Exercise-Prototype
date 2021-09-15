@@ -56,16 +56,16 @@ Person.prototype.toString = function(){
   return `${this.name}, ${this.age}`;
 }
 
-const student = new Person('Desi', 35);
+// const student = new Person('Desi', 35);
 
-console.log(student.toString()); // Desi, 35
+// console.log(student.toString()); // Desi, 35
 
-student.eat('salad');
+// student.eat('salad');
 
-console.log(student.stomach); // ['salad']
+// console.log(student.stomach); // ['salad']
 
-student.poop();
-console.log(student.stomach);// []
+// student.poop();
+// console.log(student.stomach);// []
 
 
 
@@ -87,10 +87,28 @@ console.log(student.stomach);// []
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-function Car() {
-  
+function Car(model, milesPerGallon) {
+  this.model = model;
+  this.milesPerGallon = milesPerGallon;
+  this.tank = 0;
+  this.odometer = 0;
 }
 
+Car.prototype.fill = function(gallons){
+  this.tank = this.tank + gallons;
+  }
+
+Car.prototype.drive = function(milesPerGallon) {
+  this.odometer = this.odometer + milesPerGallon;
+} 
+// const dodge = new Car('Ram', 20);
+//   console.log(dodge.model);
+//   dodge.fill(17);
+//   console.log(dodge.tank);
+//   dodge.drive(10000);
+//   console.log(dodge.odometer);
+//   dodge.drive(10000);
+//   console.log(dodge.odometer);
 
 /*
   TASK 3
@@ -99,7 +117,7 @@ function Car() {
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-function Baby() {
+function Baby(name, age, favoriteToy) {
  
 }
 
